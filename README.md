@@ -36,7 +36,7 @@ Website Garasi Motor Premium adalah platform profesional untuk bengkel motor pre
 ## Cara Penggunaan
 1. Clone repositori:
 ```bash
-git clone https://github.com/username/garasi-motor.git
+git clone https://github.com/nuelpratama/Garasi-motor.git
 ```
 2. Buka file `index.html` di browser
 
