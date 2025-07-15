@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garasi Motor Premium - Servis Berkualitas di Jakarta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f59e0b',
+                        secondary: '#1e40af',
+                        dark: '#1e293b',
+                        light: '#f8fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Bebas Neue', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Custom CSS for elements that need more control */
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(245, 158, 11, 0.8) 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            z-index: 10;
+        }
+        
+        /* Animation for the theme toggle */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .toggle-spin {
+            animation: spin 0.5s ease;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #f59e0b;
+            border-radius: 4px;
+        }
+        
+        .dark ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        
+        .dark ::-webkit-scrollbar-thumb {
+            background: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-light text-gray-800 dark:bg-dark dark:text-gray-200 font-sans transition-colors duration-300">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i data-feather="settings" class="text-primary mr-2 w-8 h-8"></i>
+                <a href="#" class="text-2xl font-bold text-secondary dark:text-primary font-heading">GARASI<span class="text-primary dark:text-blue-300">MOTOR</span></a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link hover:text-primary dark:hover:text-blue-300 font-medium">Beranda</a>
+                <a href="#services" class="nav-link hover:text-primary dark:hover:text-blue-300 font-medium">Layanan</a>
+                <a href="#gallery" class="nav-link hover:text-primary dark:hover:text-blue-300 font-medium">Galeri</a>
+                <a href="#testimonials" class="nav-link hover:text-primary dark:hover:text-blue-300 font-medium">Testimoni</a>
+                <a href="#contact" class="nav-link hover:text-primary dark:hover:text-blue-300 font-medium">Kontak</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700 transition">
+                    <i data-feather="sun" class="text-yellow-500 hidden dark:block"></i>
+                    <i data-feather="moon" class="text-blue-500 dark:hidden"></i>
+                </button>
+                
+                <a href="#contact" class="hidden md:block bg-primary hover:bg-yellow-600 text-white px-4 py-2 rounded-full font-medium transition shadow-md hover:shadow-lg">
+                    Booking Sekarang
+                </a>
+                
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700 transition">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-800 shadow-lg">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="nav-link hover:text-primary dark:hover:text-blue-300 font-medium py-2 border-b border-gray-100 dark:border-slate-700">Beranda</a>
+                <a href="#services" class="nav-link hover:text-primary dark:hover:text-blue-300 font-medium py-2 border-b border-gray-100 dark:border-slate-700">Layanan</a>
+                <a href="#gallery" class="nav-link hover:text-primary dark:hover:text-blue-300 font-medium py-2 border-b border-gray-100 dark:border-slate-700">Galeri</a>
+                <a href="#testimonials" class="nav-link hover:text-primary dark:hover:text-blue-300 font-medium py-2 border-b border-gray-100 dark:border-slate-700">Testimoni</a>
+                <a href="#contact" class="nav-link hover:text-primary dark:hover:text-blue-300 font-medium py-2">Kontak</a>
+                <a href="#contact" class="block bg-primary hover:bg-yellow-600 text-white px-4 py-2 rounded-full font-medium text-center transition shadow-md hover:shadow-lg mt-2">
+                    Booking Sekarang
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold text-white font-heading mb-6 leading-tight">
+                    SERVIS MOTOR <span class="text-primary">PREMIUM</span> DI JAKARTA
+                </h1>
+                <p class="text-lg text-gray-100 mb-8">
+                    Garasi Motor memberikan pelayanan terbaik dengan teknisi bersertifikat dan peralatan modern. Motor Anda akan mendapatkan perawatan kelas profesional.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-primary hover:bg-yellow-600 text-white px-6 py-3 rounded-full font-bold text-center transition shadow-lg hover:shadow-xl">
+                        Booking Servis
+                    </a>
+                    <a href="#services" class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-bold text-center border-2 border-white transition shadow-lg hover:shadow-xl">
+                        Lihat Layanan
+                    </a>
+                </div>
+                
+                <div class="mt-10 flex items-center space-x-6">
+                    <div class="flex items-center">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Customer">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Customer">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Customer">
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-white font-medium">500+</p>
+                            <p class="text-gray-200 text-sm">Pelanggan Puas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="bg-white/20 p-2 rounded-full">
+                            <i data-feather="award" class="text-white w-6 h-6"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-white font-medium">10+</p>
+                            <p class="text-gray-200 text-sm">Tahun Pengalaman</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 relative">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                         alt="Motorcycle Service" 
+                         class="rounded-xl shadow-2xl w-full h-auto max-h-[500px] object-cover">
+                    <div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-lg w-3/4">
+                        <div class="flex items-center">
+                            <div class="bg-primary/10 p-3 rounded-full">
+                                <i data-feather="clock" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-secondary dark:text-white">Buka Setiap Hari</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">08:00 - 20:00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="bg-white dark:bg-slate-800 py-8 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <i data-feather="shield" class="text-primary w-10 h-10 mb-3"></i>
+                    <h4 class="font-bold text-secondary dark:text-white">Garansi 30 Hari</h4>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Untuk semua servis</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-feather="dollar-sign" class="text-primary w-10 h-10 mb-3"></i>
+                    <h4 class="font-bold text-secondary dark:text-white">Harga Transparan</h4>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Tanpa biaya tersembunyi</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-feather="tool" class="text-primary w-10 h-10 mb-3"></i>
+                    <h4 class="font-bold text-secondary dark:text-white">Teknisi Ahli</h4>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Bersertifikat resmi</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-feather="truck" class="text-primary w-10 h-10 mb-3"></i>
+                    <h4 class="font-bold text-secondary dark:text-white">Pickup Service</h4>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Area Jakarta</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50 dark:bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold">LAYANAN KAMI</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary dark:text-white mt-2 font-heading">Solusi Lengkap Untuk Motor Anda</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">
+                    Kami menyediakan berbagai layanan profesional untuk menjaga performa motor Anda tetap optimal.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white dark:bg-slate-800 rounded-xl p-8 shadow-md transition duration-300 hover:border-primary border border-transparent">
+                    <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="settings" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Servis Rutin</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Perawatan berkala untuk menjaga performa motor Anda tetap optimal dengan menggunakan sparepart berkualitas.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Ganti oli & filter
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Pengecekan rem
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Pemeriksaan rantai
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">Mulai Rp150.000</span>
+                        <a href="#contact" class="text-primary hover:text-yellow-600 font-medium flex items-center">
+                            Pesan <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white dark:bg-slate-800 rounded-xl p-8 shadow-md transition duration-300 hover:border-primary border border-transparent">
+                    <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="activity" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Tune Up Mesin</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Optimalkan performa mesin motor Anda dengan servis tune up menyeluruh oleh teknisi berpengalaman.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Bersihkan karburator
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Setel klep
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Cek kompresi
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">Mulai Rp300.000</span>
+                        <a href="#contact" class="text-primary hover:text-yellow-600 font-medium flex items-center">
+                            Pesan <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white dark:bg-slate-800 rounded-xl p-8 shadow-md transition duration-300 hover:border-primary border border-transparent">
+                    <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="alert-octagon" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Perbaikan Darurat</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Layanan cepat untuk masalah motor yang membutuhkan penanganan segera, tersedia 24 jam untuk anggota.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Ganti ban bocor
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Starter mati
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Masalah kelistrikan
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">Mulai Rp200.000</span>
+                        <a href="#contact" class="text-primary hover:text-yellow-600 font-medium flex items-center">
+                            Pesan <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white dark:bg-slate-800 rounded-xl p-8 shadow-md transition duration-300 hover:border-primary border border-transparent">
+                    <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="zap" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Modifikasi Kelistrikan</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Upgrade sistem kelistrikan motor Anda dengan komponen berkualitas dan instalasi profesional.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Pasang HID/LED
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Alarm & GPS
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Audio system
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">Mulai Rp500.000</span>
+                        <a href="#contact" class="text-primary hover:text-yellow-600 font-medium flex items-center">
+                            Pesan <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white dark:bg-slate-800 rounded-xl p-8 shadow-md transition duration-300 hover:border-primary border border-transparent">
+                    <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="airplay" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Body Repair</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Perbaikan dan pengecatan bodi motor dengan hasil seperti baru menggunakan cat premium.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Cat ulang panel
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Ganti fairing
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Custom paint
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">Mulai Rp800.000</span>
+                        <a href="#contact" class="text-primary hover:text-yellow-600 font-medium flex items-center">
+                            Pesan <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white dark:bg-slate-800 rounded-xl p-8 shadow-md transition duration-300 hover:border-primary border border-transparent">
+                    <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="star" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Paket Platinum</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Paket servis komprehensif termasuk semua perawatan dasar plus pemeriksaan menyeluruh.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Full tune up
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Ganti semua cairan
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i data-feather="check" class="text-primary w-4 h-4 mr-2"></i>
+                            Pembersihan total
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">Mulai Rp1.200.000</span>
+                        <a href="#contact" class="text-primary hover:text-yellow-600 font-medium flex items-center">
+                            Pesan <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white dark:bg-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                         alt="Workshop Interior" 
+                         class="rounded-xl shadow-xl w-full h-auto object-cover">
+                </div>
+                
+                <div class="md:w-1/2">
+                    <span class="text-primary font-bold">KENAPA MEMILIH KAMI</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-secondary dark:text-white mt-2 mb-6 font-heading">Pengalaman Servis yang Berbeda</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="bg-primary/10 w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center mr-5">
+                                <i data-feather="award" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-secondary dark:text-white mb-2">Teknisi Bersertifikat</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    Tim teknisi kami telah tersertifikasi oleh pabrikan motor utama dan memiliki pengalaman minimal 5 tahun.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="bg-primary/10 w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center mr-5">
+                                <i data-feather="tool" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-secondary dark:text-white mb-2">Peralatan Modern</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    Workshop kami dilengkapi dengan peralatan diagnostik terbaru untuk memastikan akurasi perbaikan.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="bg-primary/10 w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center mr-5">
+                                <i data-feather="clock" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-secondary dark:text-white mb-2">Servis Cepat</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    Sistem antrian terkomputerisasi memastikan motor Anda ditangani secepat mungkin tanpa mengorbankan kualitas.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="bg-primary/10 w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center mr-5">
+                                <i data-feather="shield" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-secondary dark:text-white mb-2">Garansi Nyata</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    Kami memberikan garansi 30 hari untuk semua pekerjaan servis dan perbaikan yang kami lakukan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50 dark:bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold">GALERI KAMI</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary dark:text-white mt-2 font-heading">Karya dan Aktivitas Workshop</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">
+                    Lihat langsung proses kerja dan hasil servis motor di bengkel kami.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item relative group rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1608500218807-3702595a5a87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                         alt="Engine Repair" 
+                         class="w-full h-64 object-cover transition duration-300">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center p-4">
+                            <i data-feather="zoom-in" class="text-white w-8 h-8 mx-auto mb-2"></i>
+                            <h3 class="text-white font-bold text-lg">Perbaikan Mesin</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item relative group rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Custom Paint" 
+                         class="w-full h-64 object-cover transition duration-300">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center p-4">
+                            <i data-feather="zoom-in" class="text-white w-8 h-8 mx-auto mb-2"></i>
+                            <h3 class="text-white font-bold text-lg">Custom Paint Job</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item relative group rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb18059e5b0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
+                         alt="Electrical Work" 
+                         class="w-full h-64 object-cover transition duration-300">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center p-4">
+                            <i data-feather="zoom-in" class="text-white w-8 h-8 mx-auto mb-2"></i>
+                            <h3 class="text-white font-bold text-lg">Modifikasi Kelistrikan</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item relative group rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                         alt="Tire Service" 
+                         class="w-full h-64 object-cover transition duration-300">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center p-4">
+                            <i data-feather="zoom-in" class="text-white w-8 h-8 mx-auto mb-2"></i>
+                            <h3 class="text-white font-bold text-lg">Servis Roda & Ban</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item relative group rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" 
+                         alt="Motorcycle Wash" 
+                         class="w-full h-64 object-cover transition duration-300">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center p-4">
+                            <i data-feather="zoom-in" class="text-white w-8 h-8 mx-auto mb-2"></i>
+                            <h3 class="text-white font-bold text-lg">Cuci & Detailing</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item relative group rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                         alt="Workshop Facility" 
+                         class="w-full h-64 object-cover transition duration-300">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center p-4">
+                            <i data-feather="zoom-in" class="text-white w-8 h-8 mx-auto mb-2"></i>
+                            <h3 class="text-white font-bold text-lg">Fasilitas Workshop</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white dark:bg-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold">TESTIMONI PELANGGAN</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary dark:text-white mt-2 font-heading">Apa Kata Mereka Tentang Kami</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">
+                    Kepuasan pelanggan adalah prioritas utama kami. Berikut pengalaman nyata dari pelanggan Garasi Motor.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 dark:bg-slate-900 rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Andi Wijaya" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-secondary dark:text-white">Andi Wijaya</h4>
+                            <div class="flex mt-1">
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">
+                        "Motor saya mogok di tengah jalan, teknisi Garasi Motor datang dalam 30 menit dan memperbaikinya di tempat. Pelayanan sangat cepat dan profesional!"
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                        <i data-feather="clock" class="w-4 h-4 mr-1"></i>
+                        <span>2 minggu yang lalu</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 dark:bg-slate-900 rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dewi Lestari" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-secondary dark:text-white">Dewi Lestari</h4>
+                            <div class="flex mt-1">
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">
+                        "Setelah servis di Garasi Motor, motor saya seperti baru lagi. Suara mesin lebih halus dan lebih irit bahan bakar. Terima kasih!"
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                        <i data-feather="clock" class="w-4 h-4 mr-1"></i>
+                        <span>1 bulan yang lalu</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 dark:bg-slate-900 rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Budi Santoso" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-secondary dark:text-white">Budi Santoso</h4>
+                            <div class="flex mt-1">
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">
+                        "Saya sangat puas dengan modifikasi kelistrikan yang dilakukan. Hasilnya rapi dan berfungsi sempurna. Harga juga sangat kompetitif."
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                        <i data-feather="clock" class="w-4 h-4 mr-1"></i>
+                        <span>3 bulan yang lalu</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center text-primary hover:text-yellow-600 font-medium">
+                    Lihat lebih banyak testimoni <i data-feather="arrow-right" class="w-5 h-5 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold">HUBUNGI KAMI</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary dark:text-white mt-2 font-heading">Siap Melayani Kebutuhan Servis Motor Anda</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">
+                    Isi formulir berikut atau hubungi kami langsung untuk konsultasi dan booking servis.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form id="contact-form" class="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg" method="POST">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Nomor HP</label>
+                            <input type="tel" id="phone" name="phone" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Jenis Layanan</label>
+                            <select id="service" name="service" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white">
+                                <option value="">Pilih Layanan</option>
+                                <option value="Servis Rutin">Servis Rutin</option>
+                                <option value="Tune Up Mesin">Tune Up Mesin</option>
+                                <option value="Perbaikan Darurat">Perbaikan Darurat</option>
+                                <option value="Modifikasi Kelistrikan">Modifikasi Kelistrikan</option>
+                                <option value="Body Repair">Body Repair</option>
+                                <option value="Paket Platinum">Paket Platinum</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Pesan</label>
+                            <textarea id="message" name="message" rows="4" 
+                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-yellow-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                            Kirim Pesan
+                        </button>
+                        
+                        <div id="form-message" class="mt-4 text-center hidden"></div>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg h-full">
+                        <h3 class="text-2xl font-bold text-secondary dark:text-white mb-6">Informasi Kontak</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-5">
+                                    <i data-feather="map-pin" class="text-primary w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-secondary dark:text-white mb-1">Alamat Workshop</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Jl. Raya Kebayoran Lama No. 123<br>
+                                        Jakarta Selatan, 12240
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-5">
+                                    <i data-feather="phone" class="text-primary w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-secondary dark:text-white mb-1">Telepon & WhatsApp</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        <a href="tel:+6281234567890" class="hover:text-primary">0812-3456-7890</a><br>
+                                        <a href="https://wa.me/6281234567890" class="hover:text-primary">Chat via WhatsApp</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-5">
+                                    <i data-feather="mail" class="text-primary w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-secondary dark:text-white mb-1">Email</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        <a href="mailto:info@garasimotor.com" class="hover:text-primary">info@garasimotor.com</a><br>
+                                        <a href="mailto:booking@garasimotor.com" class="hover:text-primary">booking@garasimotor.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-5">
+                                    <i data-feather="clock" class="text-primary w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-secondary dark:text-white mb-1">Jam Operasional</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Senin - Jumat: 08:00 - 20:00 WIB<br>
+                                        Sabtu - Minggu: 09:00 - 17:00 WIB<br>
+                                        <span class="text-primary font-medium">Layanan darurat 24 jam untuk anggota</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-secondary dark:text-white mb-4">Ikuti Kami</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-100 dark:bg-slate-700 p-3 rounded-full hover:bg-primary hover:text-white transition">
+                                    <i data-feather="facebook" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="bg-gray-100 dark:bg-slate-700 p-3 rounded-full hover:bg-primary hover:text-white transition">
+                                    <i data-feather="instagram" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="bg-gray-100 dark:bg-slate-700 p-3 rounded-full hover:bg-primary hover:text-white transition">
+                                    <i data-feather="twitter" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="bg-gray-100 dark:bg-slate-700 p-3 rounded-full hover:bg-primary hover:text-white transition">
+                                    <i data-feather="youtube" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.85416131529485!3d-6.208980395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1628687224298!5m2!1sid!2sid" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="filter grayscale-[50%] contrast-125"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-secondary dark:bg-slate-950 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i data-feather="settings" class="text-primary mr-2 w-8 h-8"></i>
+                        <a href="#" class="text-2xl font-bold text-white font-heading">GARASI<span class="text-primary">MOTOR</span></a>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Penyedia layanan servis dan perbaikan motor profesional di Jakarta dengan standar kualitas tertinggi.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-primary transition">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition">
+                            <i data-feather="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition">Servis Rutin</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition">Tune Up Mesin</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition">Perbaikan Darurat</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition">Modifikasi Kelistrikan</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition">Body Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-primary transition">Beranda</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-primary transition">Layanan</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-primary transition">Galeri</a></li>
+                        <li><a href="#testimonials" class="text-gray-300 hover:text-primary transition">Testimoni</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-primary transition">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-300 mb-4">
+                        Dapatkan promo dan informasi terbaru dari Garasi Motor langsung ke email Anda.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email Anda" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-primary hover:bg-yellow-600 px-4 py-2 rounded-r-lg transition">
+                            <i data-feather="send" class="w-5 h-5"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-300 text-sm">
+                    &copy; 2023 Garasi Motor. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-300 hover:text-primary text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-300 hover:text-primary text-sm transition">Terms of Service</a>
+                    <a href="#" class="text-gray-300 hover:text-primary text-sm transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i data-feather="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                feather.replace();
+            } else {
+                icon.setAttribute('data-feather', 'x');
+                feather.replace();
+            }
+        });
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or use preferred color scheme
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const icon = themeToggle.querySelector('i');
+            
+            // Add spin animation
+            themeToggle.classList.add('toggle-spin');
+            setTimeout(() => {
+                themeToggle.classList.remove('toggle-spin');
+            }, 500);
+            
+            // Update icon and save preference
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+            
+            feather.replace();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('i');
+                        icon.setAttribute('data-feather', 'menu');
+                        feather.replace();
+                    }
+                }
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form Submission with PHP (simulated in this frontend example)
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            formMessage.textContent = "Terima kasih! Pesan Anda telah terkirim. Kami akan menghubungi Anda segera.";
+            formMessage.classList.remove('hidden', 'text-red-500');
+            formMessage.classList.add('block', 'text-green-500');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+                formMessage.classList.remove('block');
+            }, 5000);
+            
+            // In a real implementation, you would use PHP to process the form
+            // and send an email using PHPMailer or similar
+        });
+        
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary', 'dark:text-blue-300');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-primary', 'dark:text-blue-300');
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=ezro39/tes-haha" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
